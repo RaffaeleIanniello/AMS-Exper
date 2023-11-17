@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - AMSTERDAM EXPERIENCE -</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url("https://i.pinimg.com/originals/15/b7/2c/15b72c4c4a6e42a0b24047cc0600ec95.jpg" );
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #navB {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.2em black;
+        }
+
+            #navB:hover {
+                font-size: 20.5px;
+                color: white;
+                text-shadow: 1px 1px 2px red, 0 0 2em red, 0 0 0.2em red;
+            }
+
+        #titleAms {
+            color: red;
+            text-shadow: 2px 2px 3px black, 0 0 2em black, 0 0 0.2em black;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        #titleAms2 {
+            color: white;
+            text-shadow: 2px 2px 3px black, 0 0 2em black, 0 0 0.2em black;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            font-weight: bold;
+            margin-left: 4px;
+        }
+
+            
+
+        .logs {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+                    
+        }
+     
+
+        .AMSEXP {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .CONTAX {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        main {
+            flex: 1;
+        }
+        .dueTitoli{
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            
+        }
+        #titleAms:hover {
+            color: black;
+            text-shadow: 2px 2px 3px red, 0 0 2em red, 0 0 0.2em red;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            font-weight: bold;
+            margin-left: 4px;
+        }
+        #titleAms2:hover {
+            color: black;
+            text-shadow: 2px 2px 3px red, 0 0 2em red, 0 0 0.2em red;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        .accaCinque {
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.2em black;
+        }
+        .paragr {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 2em black, 0 0 0.2em black;
+            font-weight:bold;
+        }
+        #fooT {
+            background-color: rgba(80, 59, 98, 0.8);
+        }
+            #fooT:hover {
+                background-color: rgba(80, 59, 98, 0.95);
+            }
+    </style>
+</head>
+<body>
+    <div class="dueTitoli">
+            <h1 id="titleAms">AMSTERDAM</h1>
+            <h1 id="titleAms2">EXPERIENCE</h1>
+        </div>
+    
+    <div class="logs">
+        
+            <div class="nav-item active">
+                <a href="@Url.Action("MapperDam", "Home")"><i class="fa-solid fa-location-dot fa-flip fa-2x me-4" style="color: red;"></i></a>
+            </div>
+            <div class="nav-item active">
+                <a href="@Url.Action("Login", "Login")"><i class="fa-solid fa-user fa-2x me-4" style="color: whitesmoke;"></i></a>
+            </div>
+            <div class="nav-item">
+                <a href="@Url.Action("Login", "Login")"><i class="fa-solid fa-user-slash fa-2x me-4" style="color: darkblue;"></i></a>
+            </div>
+        </div>
+   
+
+
+    <nav class="navbar navbar-expand-sm justify-content-around">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a href="@Url.Action("Index", "Home")"><i class="fa-solid fa-house fa-beat fa-2x me-2" style="color: red;"></i></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" id="navB" href="@Url.Action("Visting","Home")">LUOGHI DA VISITARE</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" id="navB" href="@Url.Action("prenotaTour", "Home")">PRENOTA IL TOUR</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" id="navB" href="@Url.Action("Create", "Admin")">AGGIUNGI ESPERIENZA</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+
+    <footer>
+        <div class="container-fluid" id="fooT">
+            <div class="AMSEXP">
+                <h5 class="accaCinque">AMSTERDAM EXPERIENCE</h5>
+                <p class="paragr">
+                    Grazie per aver visitato il nostro sito.
+                    Siamo lieti di aver messo a vostra disposizione
+                    una guida per la vostra avventura!
+                </p>
+            </div>
+
+            <h5 class="accaCinque">CONTATTI</h5>
+            <div class="CONTAX">
+
+                <p class="paragr">Luogo: Casoria (NA), ITA</p>
+                <p class="paragr"><a href="https://github.com/RaffaeleIanniello">Github</a></p>
+                <p class="paragr"><a href="https://www.linkedin.com/in/raffaeleianniello-webdeveloper/">LinkedIn</a></p>
+                <p class="paragr">E-Mail: raffaele.ianniello03@gmail.com</p>
+                <p class="paragr">Telefono: +39 3661434253</p>
+                <p class="paragr">@@Copyright: 2023, <a href="https://www.linkedin.com/in/raffaeleianniello-webdeveloper/">RAFFAELE IANNIELLO</a></p>
+
+
+            </div>
+          </div>
+     </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

@@ -1,0 +1,76 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+<style>
+    .heichDue {
+        font-weight: bold;
+        color: whitesmoke;
+        text-shadow: 3px 3px 4px black, 0 0 2em black, 0 0 0.2em black;
+    }
+    .letterPar {
+        font-weight: bold;
+        color: whitesmoke;
+        text-shadow: 3px 3px 4px black, 0 0 2em black, 0 0 0.2em black;
+    }
+  
+
+
+</style>
+</head>
+<body>
+    <div id="carouselExampleCaptions" class="carousel slide border border-5 border-dark border-opacity-10">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://cdn-imgix.headout.com/media/images/9bb0dd441e003e2f79b8fbcaa495c755-543-amsterdam-amsterdam--van-gogh-museum-01.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h2 class="heichDue">VAN GOGH MUSEUM</h2>
+                        <p class="letterPar">Immergiti nel fantastico mondo di Vincent Van Gogh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://heigishnkexpepazwesta1.blob.core.windows.net/media/images/Banner_BDB_.2e16d0ba.fill-1920x1080.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h2 class="heichDue">HEINEKEN EXPERIENCE</h2>
+                        <p class="letterPar">Un brand. Un'icona. Un solo nome: Heineken</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://windows10spotlight.com/wp-content/uploads/2020/08/ec6ea97e318d961d4936ca8e93dd7808.jpg
+" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <div>
+                        <h2 class="heichDue">ZAANSE SCHANS</h2>
+                        <p class="letterPar">Passeggiate, relax ed una cioccolata calda visitando i mulini a vento a Zaanse Schans</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+</body>
+</html>

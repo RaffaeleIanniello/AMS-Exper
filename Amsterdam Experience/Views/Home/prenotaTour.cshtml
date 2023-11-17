@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Amsterdam_Experience.Models.Esperienze>
+    <style>
+        .card {
+            background-color: rgba(47, 59, 66, 1);
+            border-radius: 10px;
+            border:solid 2px red;
+        }
+        .card-title{
+            color:white;
+            text-align:center;
+        }
+        .card-text{
+            color: white;
+            text-align:justify;
+        }
+        .card:hover {
+            box-shadow: 0px 0px 9px 15px rgba(200, 10, 10, 0.5);
+            border: none;
+            background-color: red;
+            font-weight: bold;
+            
+        }
+        .card-img-top{
+            height: 200px;
+        }
+        .card-body{
+            height: 200px;
+        }
+        
+    </style>
+    <div class="container d-flex flex-row flex-wrap">
+@foreach (var m in Model)
+         
+        {
+
+        
+            <div class="card m-2" style="width: 18rem ; height: 35rem;">
+                <img src="~/Content/img/@m.fotoEsperienza" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@m.nomeEsperienza</h5>
+                    <p class="card-text">@m.descrizioneEsperienza</p>
+                    <p class="card-text"><small class="text-body-secondary">@m.prezzoEsperienza.ToString("C2")</small></p>
+
+                </div>
+                <a href="@Url.Action("dettaglioTour",new {id=m.idEsperienze})" class="btn btn-warning fw-bold m-4 w-50 ">CARRELLO</a>
+            </div>
+        }
+        </div>
+
+
+
+
+
+
+
+
+        @*<div class="card mb-3" style="max-width: 350px;">
+                <div class="row g-0">
+                    <div class="col-md-4 col-lg-8">
+                        <img src="~/Content/img/@m.fotoEsperienza" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@m.nomeEsperienza</h5>
+                            <p class="card-text">@m.descrizioneEsperienza</p>
+                            <p class="card-text"><small class="text-body-secondary">@m.prezzoEsperienza</small></p>
+                            <a href="@Url.Action("dettaglioTour",new {id=m.idEsperienze})" class="btn btn-danger">PRENOTA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@

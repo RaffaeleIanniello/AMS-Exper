@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Amsterdam_Experience.Models.Esperienze>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+   .grIndice{
+       display: flex;
+       flex-direction: column;
+      justify-content:center; 
+      align-items: center;
+   }
+    .grDetails {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px 0px rgb(0, 0, 0, 0.8);
+        font-size: 15px;
+    }
+</style>
+<div class="grIndice">
+    <div class="grDetails">
+        <p>
+            <a href="@Url.Action("Create")" class="btn btn-danger justify-content-center mt-3 mb-3 ms-3">CREA NUOVA ESPERIENZA</a>
+        </p>
+        <h2 class="text-center fw-bold">INDICE ESPERIENZE</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nomeEsperienza)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descrizioneEsperienza)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fotoEsperienza)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.prezzoEsperienza)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dataEsperienza)
+                </th>
+               
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomeEsperienza)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descrizioneEsperienza)
+                    </td>
+                    <td>
+                       <img src="~/Content/img/@item.fotoEsperienza" style="width:50px"/>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.prezzoEsperienza)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dataEsperienza)
+                    </td>
+                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idEsperienze }, new { @class = "text-danger"}) 
+                        
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idEsperienze }, new { @class = "text-danger"})
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

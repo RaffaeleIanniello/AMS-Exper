@@ -1,0 +1,45 @@
+﻿@model Amsterdam_Experience.Models.Esperienze
+<style>
+    .accaQuat {
+        text-align: center;
+        color: greenyellow;
+        text-shadow: 4px 4px 6px black, 0 0 2em black, 0 0 0.2em black;
+    }
+
+    .vidS {
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    #myVideo {
+        box-shadow: 3px 4px 12px 8px rgb(0, 0, 0);
+        background-color:black;
+        margin-top: 5px;
+    }
+    .postscriptum {
+        text-align: center;
+        color: white;
+        text-shadow: 4px 4px 6px black, 0 0 2em black, 0 0 0.2em black;
+    }
+</style>
+
+
+
+
+
+    <h2 class="accaQuat">GRAZIE PER L'ACQUISTO!</h2>
+    <h4 class="postscriptum">So che sei ansioso di visitare Amsterdam ma...nel frattempo puoi dare uno sguardo al video sottostante!</h4>
+    <div class="vidS">
+        <video id="myVideo" width="800" height="500" controls autoplay muted>
+            <source src="~/Content/docuAms.mp4" type="video/mp4" />
+
+        </video>
+    </div>
+
+    <script>
+        function playVideo() {
+            var video = document.getElementById("myVideo");
+            video.play();
+        }
+    </script>

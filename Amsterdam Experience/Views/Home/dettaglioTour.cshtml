@@ -1,0 +1,110 @@
+﻿@model Amsterdam_Experience.Models.Esperienze
+<style>
+    .tuttoProcedi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 100px;
+        box-shadow: 3px 4px 22px 8px rgba(0, 0, 0, 1);
+        
+    }
+    .internals {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 4px 4px 6px black, 0 0 2em black, 0 0 0.2em black;
+        color: white;
+        font-weight:bold;
+        
+    }
+    #bottoncino{
+        margin-bottom: 10px;
+        background-color: red;
+        color: white;
+        margin-top: 6px;
+        border-radius: 10px;
+        border:none;
+        font-weight:bold;
+    }
+
+
+</style>
+
+
+    <div>
+
+        <div class="tuttoProcedi">
+            <div class="internals">
+                <h5>
+                    @Html.DisplayNameFor(model => model.nomeEsperienza)
+                </h5>
+
+                <p>
+                    @Html.DisplayFor(model => model.nomeEsperienza)
+                </p>
+
+                <h5>
+                    @Html.DisplayNameFor(model => model.descrizioneEsperienza)
+                </h5>
+
+                <p>
+                    @Html.DisplayFor(model => model.descrizioneEsperienza)
+                </p>
+
+                @*<h5>
+                    @Html.DisplayNameFor(model => model.fotoEsperienza)
+                    
+                </h5>
+
+                <p>
+                    @Html.DisplayFor(model => model.fotoEsperienza)
+                </p>*@
+
+                <h5>
+                    @Html.DisplayNameFor(model => model.prezzoEsperienza)
+                </h5>
+
+                <p>
+                    @Html.DisplayFor(model => model.prezzoEsperienza)
+                </p>
+
+                <h5>
+                    @Html.DisplayNameFor(model => model.dataEsperienza)
+                </h5>
+
+                <p>
+                    @Html.DisplayFor(model => model.dataEsperienza)
+                </p>
+
+
+            </div>
+            @Html.HiddenFor(f => f.idEsperienze)
+            @Html.AntiForgeryToken()
+            <input type="number" id="quantity" value="1" min="1" />
+            <button type="submit" id="bottoncino">PRENOTA</button>
+        </div>
+
+    </div>
+
+        @*<p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.idEsperienze }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@
+        @section scripts{ 
+            <script>
+                $(document).ready(function () {
+                    $("#bottoncino").click(function () {
+                        var url = window.location.href;
+                        var id = url.substring(url.lastIndexOf('/') + 1);
+                        var inputs = $("#quantity").val()
+                        $.ajax({
+                            method: 'POST', url: '../aggiungiexp', data: { valorenumero: inputs, idUrl: id }, success: function (data) {window.location.href = `../Carrello/${id}` }
+                        }
+                        )
+                    })
+                })
+              </script>
+        }

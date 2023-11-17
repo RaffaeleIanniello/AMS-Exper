@@ -1,0 +1,54 @@
+﻿﻿@model Amsterdam_Experience.Models.Utenti
+@{
+    ViewBag.Title = "Login";
+}
+<style>
+    .gruppoTutto{
+        display: flex;
+        justify-content: center;
+
+    }
+    .gruppoLog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        
+        width: 250px;
+        height: 310px;
+        box-shadow: 10px 10px 5px 0px rgb(0, 0, 0, 0.8);
+        
+    }
+    .gruppoLog:hover{
+        background-color: rgb(255, 255, 255, 0.95);
+        
+
+    }
+</style>
+
+<body class="backimage">
+    
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+    <div class="gruppoTutto">
+        <div class="gruppoLog">
+            <div class="form-group">
+                <h2 class="text-dark fw-bold text-center">LOGIN</h2>
+                @Html.LabelFor(m => m.username, new { @class = "text-dark fw-bold" })
+                @Html.TextBoxFor(m => m.username, new { @class = "form-control mt-1", required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.password, new { @class = "text-dark fw-bold" })
+                @Html.TextBoxFor(m => m.password, new { @class = "form-control text-danger", required = "required", type = "password" })
+            </div>
+
+            <button type="submit" class="btn btn-danger text-light mt-3 w-2 fw-bold">LOGIN</button>
+            <a href="@Url.Action("Register")" class="btn btn-danger text-light mt-3 fw-bold">REGISTRATI</a>
+        </div>
+    </div>
+    }
+
+</body>
+

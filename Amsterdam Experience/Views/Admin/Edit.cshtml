@@ -1,0 +1,80 @@
+﻿@model Amsterdam_Experience.Models.Esperienze
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    .gruppoEdit {
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4 class="fw-bold text-light text-center">MODIFICA L'ESPERIENZA</h4>
+    <div class="tuttoE">
+        <div class="gruppoEdit">
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model=>model.idEsperienze)
+            <div class="form-group">
+                @Html.LabelFor(model => model.nomeEsperienza, htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nomeEsperienza, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nomeEsperienza, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.descrizioneEsperienza, htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.descrizioneEsperienza, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descrizioneEsperienza, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fotoEsperienza, htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fotoEsperienza, new { htmlAttributes = new { @class = "form-control", type = "file" } })
+                    @Html.ValidationMessageFor(model => model.fotoEsperienza, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.prezzoEsperienza, htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.prezzoEsperienza, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.prezzoEsperienza, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.dataEsperienza, htmlAttributes: new { @class = "control-label col-md-2 fw-bold" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dataEsperienza, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                    @Html.ValidationMessageFor(model => model.dataEsperienza, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="MODIFICA" class="btn btn-info text-light justify-content-center mt-3" />
+                    <div>
+                        <a href="@Url.Action("Index")" class="btn btn-warning justify-content-center mt-3 mb-3 ms-3">LISTA</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+

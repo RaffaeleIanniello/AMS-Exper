@@ -1,0 +1,58 @@
+﻿@model Amsterdam_Experience.Models.Esperienze
+@using(Html.BeginForm("Carrello", "Home", FormMethod.Post))
+<div>
+    <h4>Esperienze</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeEsperienza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeEsperienza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descrizioneEsperienza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descrizioneEsperienza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fotoEsperienza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fotoEsperienza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prezzoEsperienza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prezzoEsperienza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEsperienza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEsperienza)
+        </dd>
+        <dd>
+            <input type="number" id="quantity" value="1" min="1"/>
+        </dd>
+        <@Html.HiddenFor(f=>f.idEsperienze)>
+            @Html.AntiForgeryToken()
+        <button type="submit">PRENOTA</button>
+        @*<a href="@Url.Action("Carrello")" class="btn btn-danger">CARRELLO</a>*@
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idEsperienze }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
