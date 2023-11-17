@@ -1,6 +1,7 @@
 # AMS-Exper
  
 DESCRIZIONE
+ 
  In questo progetto, l'utente ha la possibilità di immergersi nelle attrazioni
  più rinomate della città:
  - Van Gogh Museum
@@ -13,6 +14,7 @@ DESCRIZIONE
  - Blue Boat Company
  - Johan Cruijff Arena
  - Madame Tussauds
+
 
  FUNZIONALITA'
  _____________________________________________________________________________
